@@ -1,2 +1,9 @@
 <h1>Tasks#edit</h1>
 <p>Find me in app/views/tasks/edit.html.erb</p>
+<%= form_with scope: :task, url: tasks_update_path do |form| %>
+  <h3>Name</h3>
+  <%= form.text_field :name %>
+  <h3>Detail</h3>
+  <%= form.text_field :detail %>
+  <p><%= form.submit %></p>
+<% end %>
