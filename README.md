@@ -1,3 +1,5 @@
+[docs/el-training.md](docs/el-training.md)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
