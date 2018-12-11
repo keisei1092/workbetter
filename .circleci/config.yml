@@ -13,8 +13,8 @@ jobs:
           POSTGRES_USER: workbetter
           POSTGRES_DB: workbetter_test
           POSTGRES_PASSWORD: ""
-  steps:
-    - checkout
-    - run: bundle install
-    - run: rails db:setup
-    - run: bundle exec rspec
+    steps:
+      - checkout
+      - run: bundle install
+      - run: rails db:setup
+      - run: bundle exec rspec
