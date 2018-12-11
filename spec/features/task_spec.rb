@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Task', :type => :feature do
+feature 'Task' do
   scenario 'Create a new task' do
     visit '/tasks/new'
 
