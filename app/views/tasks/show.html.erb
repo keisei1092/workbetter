@@ -1,7 +1,9 @@
 <h1>Tasks#show</h1>
 <p>Find me in app/views/tasks/show.html.erb</p>
+<p><%= flash[:notice] %></p>
 <h3>Name</h3>
 <%= @task.name %>
 <h3>Detail</h3>
 <%= @task.detail %>
 <p><%= link_to 'Edit', tasks_edit_path(@task) %></p>
+<p><%= link_to 'Back', tasks_index_path %></p>

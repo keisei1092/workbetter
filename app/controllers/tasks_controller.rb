@@ -18,6 +18,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.create(task_params)
     if @task.save
+      flash[:notice] = 'タスクを作成しました'
       redirect_to tasks_index_path
     else
       render 'new'
@@ -27,6 +28,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(task_params)
+      flash[:notice] = 'タスクを更新しました'
       redirect_to tasks_show_path
     else
       render 'edit'
@@ -36,6 +38,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    flash[:notice] = 'タスクを削除しました'
     redirect_to tasks_index_path
   end
 
