@@ -1,0 +1,10 @@
+<h1>Tasks#new</h1>
+<p>Find me in app/views/tasks/new.html.erb</p>
+<p><%= flash[:notice] %></p>
+<%= form_with scope: :task, url: tasks_create_path do |form| %>
+  <h3>Name</h3>
+  <%= form.text_field :name %>
+  <h3>Detail</h3>
+  <%= form.text_field :detail %>
+  <p><%= form.submit %></p>
+<% end %>
