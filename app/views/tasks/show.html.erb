@@ -6,4 +6,5 @@
 <h3>Detail</h3>
 <%= @task.detail %>
 <p><%= link_to 'Edit', tasks_edit_path(@task) %></p>
+<p><%= link_to 'Delete', tasks_destroy_path(@task), :method => 'delete' %></p>
 <p><%= link_to 'Back', tasks_index_path %></p>

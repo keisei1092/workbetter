@@ -5,5 +5,5 @@ one:
   detail: MyText
 
 two:
-  name: MyString
-  detail: MyText
+  name: TwoTask
+  detail: TwoDetail

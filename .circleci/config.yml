@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workbetter
+    docker:
+      - image: circleci/ruby:2.5.3-node-browsers
+        environment:
+          PGHOST: localhost
+          PGUSER: workbetter
+          RAILS_ENV: test
+      - image: postgres:9.5
+        environment:
+          POSTGRES_USER: workbetter
+          POSTGRES_DB: workbetter_test
+          POSTGRES_PASSWORD: ""
+    steps:
+      - checkout
+      - run: bundle install
+      - run: rails db:setup
+      - run: bundle exec rspec
