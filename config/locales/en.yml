@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  tasks:
+    create:
+      success: Task created!
+    update:
+      success: Task updated!
+    delete:
+      success: Task deleted!

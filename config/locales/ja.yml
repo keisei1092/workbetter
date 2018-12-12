@@ -1,0 +1,9 @@
+ja:
+  hello: ハローワールド
+  tasks:
+    create:
+      success: タスクを作成しました
+    update:
+      success: タスクを更新しました
+    delete:
+      success: タスクを削除しました
