@@ -7,7 +7,7 @@ feature 'New Task' do
     fill_in 'task_name', :with => 'My Task'
     fill_in 'task_detail', :with => 'Detail'
 
-    click_button 'Save Task'
+    click_button '保存'
 
     expect(page).to have_text 'タスクを作成しました'
   end
@@ -20,12 +20,12 @@ feature 'Edit Task' do
     visit tasks_show_path(Task.last.id)
     expect(page).to have_text 'MyString'
 
-    click_link 'Edit'
+    click_link '編集'
 
     fill_in 'task_name', :with => 'EditEdit'
     fill_in 'task_detail', :with => 'detaildetaildetail'
 
-    click_button 'Save Task'
+    click_button '保存'
 
     expect(page).to have_text 'タスクを更新しました'
     expect(page).to have_text 'EditEdit'
@@ -40,7 +40,7 @@ feature 'Delete Task' do
     visit tasks_show_path(Task.last.id)
     expect(page).to have_text 'MyString'
 
-    click_link 'Delete'
+    click_link '削除'
 
     expect(page).to have_text 'タスクを削除しました'
     expect(page).not_to have_text 'MyString'
