@@ -1,10 +1,9 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h1>workbetter</h1>
 <p><%= flash[:notice] %></p>
-<h3>Name</h3>
+<h3><%= t('tasks.name') %></h3>
 <%= @task.name %>
-<h3>Detail</h3>
+<h3><%= t('tasks.detail') %></h3>
 <%= @task.detail %>
-<p><%= link_to 'Edit', tasks_edit_path(@task) %></p>
-<p><%= link_to 'Delete', tasks_destroy_path(@task), :method => 'delete' %></p>
-<p><%= link_to 'Back', tasks_index_path %></p>
+<p><%= link_to t('edit'), tasks_edit_path(@task) %></p>
+<p><%= link_to t('delete'), tasks_destroy_path(@task), :method => 'delete' %></p>
+<p><%= link_to t('back'), tasks_index_path %></p>

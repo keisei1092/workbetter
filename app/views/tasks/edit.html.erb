@@ -1,10 +1,9 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<h1>workbetter</h1>
 <p><%= flash[:notice] %></p>
 <%= form_with scope: :task, url: tasks_update_path do |form| %>
-  <h3>Name</h3>
+  <h3>タスク名</h3>
   <%= form.text_field :name %>
-  <h3>Detail</h3>
+  <h3>詳細</h3>
   <%= form.text_field :detail %>
   <p><%= form.submit %></p>
 <% end %>
