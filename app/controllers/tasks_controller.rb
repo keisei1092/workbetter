@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
+      .sort_by { |t| [t.created_at, t.updated_at].max }
+      .reverse # updated_atの降順
   end
 
   def edit

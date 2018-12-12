@@ -1,5 +1,22 @@
 require 'rails_helper'
 
+feature 'tasks index Sort' do
+  scenario 'tasks sorts by create or update desc' do
+    visit '/tasks'
+
+    expected_tasks_order = Task.all
+      .sort_by { |t| [t.created_at, t.updated_at].max }
+      .reverse
+      .map { |t| t.name }
+
+    actual_tasks_order = page.body
+      .scan(%r!<b>(.*?)</b>!) # ここにそれっぽいregexを書く
+      .flatten
+
+    expect(actual_tasks_order).to eq(expected_tasks_order)
+  end
+end
+
 feature 'New Task' do
   scenario 'User create a new task' do
     visit '/tasks/new'
