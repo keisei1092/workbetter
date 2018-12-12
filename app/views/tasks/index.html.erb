@@ -1,14 +1,14 @@
 <h1>workbetter</h1>
 <p><%= flash[:notice] %></p>
-<p><%= link_to 'New Task', tasks_new_path %></p>
+<p><%= link_to 'タスクを作成', tasks_new_path %></p>
 <ul>
   <% @tasks.each do |task| %>
     <li>
       <b><%= task.name %></b>
       <%= task.detail %>
-      <%= link_to 'Detail', tasks_show_path(task) %>
-      <%= link_to 'Edit', tasks_edit_path(task) %>
-      <%= link_to 'Delete', tasks_destroy_path(task), :method => 'delete' %>
+      <%= link_to '詳細', tasks_show_path(task) %>
+      <%= link_to '編集', tasks_edit_path(task) %>
+      <%= link_to '削除', tasks_destroy_path(task), :method => 'delete' %>
     </li>
   <% end %>
 </ul>
