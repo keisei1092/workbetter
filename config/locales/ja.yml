@@ -1,9 +1,21 @@
 ja:
-  hello: ハローワールド
+  hello: "ハローワールド"
+  detail: "詳細"
+  edit: "編集"
+  delete: "削除"
+  back: "戻る"
   tasks:
-    create:
-      success: タスクを作成しました
-    update:
-      success: タスクを更新しました
-    delete:
-      success: タスクを削除しました
+    name: "タスク名"
+    detail: "タスク詳細"
+    create: "タスクを作成"
+    update: "タスクを編集"
+    delete: "タスクを削除"
+    success:
+      create: "タスクを作成しました"
+      update: "タスクを更新しました"
+      delete: "タスクを削除しました"
+  helpers:
+    submit:
+      create: "登録"
+      update: "更新"
+      submit: "保存"

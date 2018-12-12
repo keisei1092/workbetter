@@ -31,10 +31,17 @@
 
 en:
   hello: "Hello world"
+  detail: "Detail"
+  edit: "Edit"
+  delete: "Delete"
+  back: "Back"
   tasks:
-    create:
-      success: Task created!
-    update:
-      success: Task updated!
-    delete:
-      success: Task deleted!
+    name: "Task name"
+    detail: "Task detail"
+    create: "Create task"
+    update: "Update task"
+    delete: "Delete task"
+    success:
+      create: "Task created!"
+      update: "Task updated!"
+      delete: "Task deleted!"
