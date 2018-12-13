@@ -1,9 +1,2 @@
-<h1>workbetter</h1>
-<p><%= flash[:notice] %></p>
-<%= form_with scope: :task, url: tasks_update_path do |form| %>
-  <h3>タスク名</h3>
-  <%= form.text_field :name %>
-  <h3>詳細</h3>
-  <%= form.text_field :detail %>
-  <p><%= form.submit %></p>
-<% end %>
+<%= render 'form' %>
+<%= link_to t('back'), tasks_index_path %>
