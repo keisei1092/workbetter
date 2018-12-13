@@ -28,6 +28,12 @@ feature 'New Task' do
 
     expect(page).to have_text 'タスクを作成しました'
   end
+
+  scenario 'Empty task' do
+    visit '/tasks/new'
+    click_button '保存'
+    expect(page).to have_text ''
+  end
 end
 
 feature 'Edit Task' do

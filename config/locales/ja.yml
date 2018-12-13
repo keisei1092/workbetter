@@ -4,6 +4,8 @@ ja:
   edit: "編集"
   delete: "削除"
   back: "戻る"
+  errors:
+    occur: "エラーが発生しました"
   tasks:
     name: "タスク名"
     detail: "タスク詳細"
