@@ -32,7 +32,7 @@ feature 'New Task' do
   scenario 'Empty task' do
     visit '/tasks/new'
     click_button '保存'
-    expect(page).to have_text ''
+    expect(page).to have_text 'エラーが発生しました'
   end
 end
 
@@ -53,6 +53,20 @@ feature 'Edit Task' do
     expect(page).to have_text 'タスクを更新しました'
     expect(page).to have_text 'EditEdit'
     expect(page).to have_text 'detaildetaildetail'
+  end
+
+  scenario 'empty task' do
+    visit tasks_show_path(Task.last.id)
+    expect(page).to have_text 'MyString'
+
+    click_link '編集'
+
+    fill_in 'task_name', :with => ''
+    fill_in 'task_detail', :with => ''
+
+    click_button '保存'
+
+    expect(page).to have_text 'エラーが発生しました'
   end
 end
 
