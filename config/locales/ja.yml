@@ -9,6 +9,7 @@ ja:
   tasks:
     name: "タスク名"
     detail: "タスク詳細"
+    due_date: "終了期限"
     create: "タスクを作成"
     update: "タスクを編集"
     delete: "タスクを削除"
