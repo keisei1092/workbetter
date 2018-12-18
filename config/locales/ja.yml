@@ -10,6 +10,7 @@ ja:
     name: "タスク名"
     detail: "タスク詳細"
     due_date: "終了期限"
+    due_unfixed: "設定なし"
     create: "タスクを作成"
     update: "タスクを編集"
     delete: "タスクを削除"
