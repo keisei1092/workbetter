@@ -1,9 +1,9 @@
 <%= form_with scope: :task do |form| %>
   <%= render 'shared/error_messages' %>
 
-  <h3>タスク名</h3>
+  <h3><%= t('tasks.name') %></h3>
   <%= form.text_field :name %>
-  <h3>詳細</h3>
+  <h3><%= t('tasks.detail') %></h3>
   <%= form.text_field :detail %>
   <p><%= form.submit %></p>
 <% end %>
