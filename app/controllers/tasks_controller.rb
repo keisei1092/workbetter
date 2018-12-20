@@ -1,8 +1,14 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
-      .sort_by { |t| [t.created_at, t.updated_at].max }
-      .reverse # updated_atの降順
+    if params[:sort] == 'due_date'
+      @tasks = Task.all
+        .sort_by { |t| t.due_date }
+        .reverse # due_dateの降順
+    else
+      @tasks = Task.all
+        .sort_by { |t| [t.created_at, t.updated_at].max }
+        .reverse # updated_atの降順
+    end
   end
 
   def edit

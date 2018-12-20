@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'tasks index Sort' do
-  scenario 'tasks sorts by create or update desc' do
+  scenario 'tasks sort by create or update desc' do
     visit '/tasks'
 
     expected_tasks_order = Task.all
@@ -10,7 +10,22 @@ feature 'tasks index Sort' do
       .map { |t| t.name }
 
     actual_tasks_order = page.body
-      .scan(%r!<b>(.*?)</b>!) # ここにそれっぽいregexを書く
+      .scan(%r!<b>(.*?)</b>!)
+      .flatten
+
+    expect(actual_tasks_order).to eq(expected_tasks_order)
+  end
+
+  scenario 'tasks sort by due_date' do
+    visit '/tasks?sort=due_date'
+
+    expected_tasks_order = Task.all
+      .sort_by { |t| t.due_date }
+      .reverse
+      .map { |t| t.name }
+
+    actual_tasks_order = page.body
+      .scan(%r!<b>(.*?)</b>!)
       .flatten
 
     expect(actual_tasks_order).to eq(expected_tasks_order)
