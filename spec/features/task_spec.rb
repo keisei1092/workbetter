@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'tasks index Sort' do
-  scenario 'tasks sorts by create or update desc' do
+  scenario 'tasks sort by create or update desc' do
     visit '/tasks'
 
     expected_tasks_order = Task.all
@@ -10,7 +10,24 @@ feature 'tasks index Sort' do
       .map { |t| t.name }
 
     actual_tasks_order = page.body
-      .scan(%r!<b>(.*?)</b>!) # ここにそれっぽいregexを書く
+      .scan(%r!<b>(.*?)</b>!)
+      .flatten
+
+    expect(actual_tasks_order).to eq(expected_tasks_order)
+  end
+
+  scenario 'tasks sort by due_date' do
+    visit '/tasks'
+
+    click_link('終了期限')
+
+    expected_tasks_order = Task.all
+      .sort_by { |t| t.due_date }
+      .reverse
+      .map { |t| t.name }
+
+    actual_tasks_order = page.body
+      .scan(%r!<b>(.*?)</b>!)
       .flatten
 
     expect(actual_tasks_order).to eq(expected_tasks_order)
@@ -23,6 +40,7 @@ feature 'New Task' do
 
     fill_in 'task_name', :with => 'My Task'
     fill_in 'task_detail', :with => 'Detail'
+    fill_in 'task_due_date', :with => ''
 
     click_button '保存'
 
@@ -32,6 +50,18 @@ feature 'New Task' do
   scenario 'Empty task' do
     visit '/tasks/new'
     click_button '保存'
+    expect(page).to have_text 'エラーが発生しました'
+  end
+
+  scenario 'invalid due date' do
+    visit '/tasks/new'
+
+    fill_in 'task_name', :with => 'My Task'
+    fill_in 'task_detail', :with => 'Detail'
+    fill_in 'task_due_date', :with => DateTime.now - 1
+
+    click_button '保存'
+
     expect(page).to have_text 'エラーが発生しました'
   end
 end
@@ -47,6 +77,7 @@ feature 'Edit Task' do
 
     fill_in 'task_name', :with => 'EditEdit'
     fill_in 'task_detail', :with => 'detaildetaildetail'
+    fill_in 'task_due_date', :with => ''
 
     click_button '保存'
 

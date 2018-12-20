@@ -31,18 +31,23 @@
 
 en:
   hello: "Hello world"
+  sort: "Order"
   detail: "Detail"
   edit: "Edit"
   delete: "Delete"
   back: "Back"
   errors:
     occur: "Error occurred"
+    datetime: "must be a valid datetime"
   tasks:
     name: "Task name"
     detail: "Task detail"
+    due_date: "Due date"
+    due_unfixed: "Not set"
     create: "Create task"
     update: "Update task"
     delete: "Delete task"
+    create_update_at: "Create or Update Date"
     success:
       create: "Task created!"
       update: "Task updated!"

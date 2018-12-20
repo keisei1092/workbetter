@@ -5,21 +5,25 @@ one:
   detail: MyText
   updated_at: <%= Time.now - 3600 %>
   created_at: <%= Time.now - 3600 %>
+  due_date: <%= Time.now + 3600 %>
 
 two:
   name: TwoTask
   detail: TwoDetail
   updated_at: <%= Time.now - 3600 %>
   created_at: <%= Time.now - 7200 %>
+  due_date: <%= Time.now + 7200 %>
 
 three:
   name: ThreeTask
   detail: ThreeDetail
   updated_at: <%= Time.now - 7200 %>
   created_at: <%= Time.now - 7200 %>
+  due_date: <%= Time.now + 10800 %>
 
 four:
   name: FourTask
   detail: FourDetail
   updated_at: <%= Time.now %>
   created_at: <%= Time.now %>
+  due_date: <%= Time.now + 14400 %>

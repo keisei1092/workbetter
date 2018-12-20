@@ -2,6 +2,8 @@
 <%= @task.name %>
 <h3><%= t('tasks.detail') %></h3>
 <%= @task.detail %>
+<h3><%= t('tasks.due_date') %></h3>
+<%= @task.due_date ||= t('tasks.due_unfixed') %>
 <p><%= link_to t('edit'), tasks_edit_path(@task) %></p>
 <p><%= link_to t('delete'), tasks_destroy_path(@task), :method => 'delete' %></p>
 <p><%= link_to t('back'), tasks_index_path %></p>
