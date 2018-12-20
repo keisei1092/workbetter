@@ -52,6 +52,18 @@ feature 'New Task' do
     click_button '保存'
     expect(page).to have_text 'エラーが発生しました'
   end
+
+  scenario 'invalid due date' do
+    visit '/tasks/new'
+
+    fill_in 'task_name', :with => 'My Task'
+    fill_in 'task_detail', :with => 'Detail'
+    fill_in 'task_due_date', :with => DateTime.now - 1
+
+    click_button '保存'
+
+    expect(page).to have_text 'エラーが発生しました'
+  end
 end
 
 feature 'Edit Task' do

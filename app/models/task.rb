@@ -3,11 +3,10 @@ class Task < ApplicationRecord
   validates :detail, presence: true
   validate :validate_due_date
 
+  # 今より昔の日付時刻は終了期限に設定できない
   def validate_due_date
-    return unless due_date.present?
-    errors.add(
-      :due_date,
-      (I18n.t('errors.datetime') if (DateTime.parse(due_date) rescue ArgumentError) == ArgumentError)
-    )
+    if due_date.present? && due_date < DateTime.now
+      errors.add(:due_date, I18n.t('errors.datetime'))
+    end
   end
 end
