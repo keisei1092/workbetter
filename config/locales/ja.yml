@@ -6,6 +6,7 @@ ja:
   back: "戻る"
   errors:
     occur: "エラーが発生しました"
+    datetime: "正しい日時を入力してください"
   tasks:
     name: "タスク名"
     detail: "タスク詳細"

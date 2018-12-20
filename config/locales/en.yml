@@ -37,6 +37,7 @@ en:
   back: "Back"
   errors:
     occur: "Error occurred"
+    datetime: "must be a valid datetime"
   tasks:
     name: "Task name"
     detail: "Task detail"

@@ -23,6 +23,7 @@ feature 'New Task' do
 
     fill_in 'task_name', :with => 'My Task'
     fill_in 'task_detail', :with => 'Detail'
+    fill_in 'task_due_date', :with => ''
 
     click_button '保存'
 
@@ -47,6 +48,7 @@ feature 'Edit Task' do
 
     fill_in 'task_name', :with => 'EditEdit'
     fill_in 'task_detail', :with => 'detaildetaildetail'
+    fill_in 'task_due_date', :with => ''
 
     click_button '保存'
 
