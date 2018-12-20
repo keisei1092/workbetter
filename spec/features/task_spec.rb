@@ -17,7 +17,9 @@ feature 'tasks index Sort' do
   end
 
   scenario 'tasks sort by due_date' do
-    visit '/tasks?sort=due_date'
+    visit '/tasks'
+
+    click_link('終了期限')
 
     expected_tasks_order = Task.all
       .sort_by { |t| t.due_date }

@@ -31,6 +31,7 @@
 
 en:
   hello: "Hello world"
+  sort: "Order"
   detail: "Detail"
   edit: "Edit"
   delete: "Delete"
@@ -46,6 +47,7 @@ en:
     create: "Create task"
     update: "Update task"
     delete: "Delete task"
+    create_update_at: "Create or Update Date"
     success:
       create: "Task created!"
       update: "Task updated!"

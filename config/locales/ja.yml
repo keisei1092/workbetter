@@ -1,5 +1,6 @@
 ja:
   hello: "ハローワールド"
+  sort: "並び替え"
   detail: "詳細"
   edit: "編集"
   delete: "削除"
@@ -15,6 +16,7 @@ ja:
     create: "タスクを作成"
     update: "タスクを編集"
     delete: "タスクを削除"
+    create_update_at: "作成・更新日時"
     success:
       create: "タスクを作成しました"
       update: "タスクを更新しました"

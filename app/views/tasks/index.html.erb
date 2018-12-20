@@ -1,4 +1,10 @@
 <p><%= link_to t('tasks.create'), tasks_new_path %></p>
+<p>
+  <%= t('sort') %>:
+  <%= link_to t('tasks.create_update_at'), tasks_index_path %>
+  |
+  <%= link_to t('tasks.due_date'), tasks_index_path(:sort => 'due_date') %>
+</p>
 <ul>
   <% @tasks.each do |task| %>
     <li>
