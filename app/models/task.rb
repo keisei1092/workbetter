@@ -1,4 +1,6 @@
 class Task < ApplicationRecord
+  enum status: [:todo, :doing, :done]
+
   validates :name, presence: true
   validates :detail, presence: true
   validate :validate_due_date
