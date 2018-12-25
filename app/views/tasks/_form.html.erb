@@ -7,5 +7,7 @@
   <%= form.text_field :detail %>
   <h3><%= t('tasks.due_date') %></h3>
   <%= form.datetime_field :due_date %>
+  <h3><%= t('tasks.status.title') %></h3>
+  <%= form.select :status, Task.statuses.map { |k, v| [k.humanize(), k] } %>
   <p><%= form.submit %></p>
 <% end %>

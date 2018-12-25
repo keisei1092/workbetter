@@ -12,6 +12,11 @@ ja:
     name: "タスク名"
     detail: "タスク詳細"
     due_date: "終了期限"
+    status:
+      title: "状態"
+      todo: "未着手"
+      doing: "着手中"
+      done: "完了"
     due_unfixed: "設定なし"
     create: "タスクを作成"
     update: "タスクを編集"

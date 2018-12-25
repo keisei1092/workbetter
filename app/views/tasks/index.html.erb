@@ -11,6 +11,7 @@
       <b><%= task.name %></b>
       <%= task.detail %>
       <%= task.due_date ||= t('tasks.due_unfixed') %>
+      <%= t("tasks.status.#{task.status}") %>
       <%= link_to t('detail'), tasks_show_path(task) %>
       <%= link_to t('edit'), tasks_edit_path(task) %>
       <%= link_to t('delete'), tasks_destroy_path(task), :method => 'delete' %>

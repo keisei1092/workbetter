@@ -43,6 +43,11 @@ en:
     name: "Task name"
     detail: "Task detail"
     due_date: "Due date"
+    status:
+      title: "Status"
+      todo: "Todo"
+      doing: "Doing"
+      done: "Done"
     due_unfixed: "Not set"
     create: "Create task"
     update: "Update task"
