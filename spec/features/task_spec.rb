@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 feature 'tasks index' do
+  before(:each) do
+    visit '/tasks'
+  end
+
   scenario 'task search by keyword' do
     # do something
   end
@@ -14,8 +18,6 @@ feature 'tasks index' do
   end
 
   scenario 'tasks sort by create or update desc' do
-    visit '/tasks'
-
     expected_tasks_order = Task.all
       .sort_by { |t| [t.created_at, t.updated_at].max }
       .reverse
@@ -29,8 +31,6 @@ feature 'tasks index' do
   end
 
   scenario 'tasks sort by due_date' do
-    visit '/tasks'
-
     click_link('終了期限')
 
     expected_tasks_order = Task.all
@@ -47,9 +47,11 @@ feature 'tasks index' do
 end
 
 feature 'New Task' do
-  scenario 'User create a new task' do
+  before(:each) do
     visit '/tasks/new'
+  end
 
+  scenario 'User create a new task' do
     fill_in 'task_name', :with => 'My Task'
     fill_in 'task_detail', :with => 'Detail'
     fill_in 'task_due_date', :with => ''
@@ -60,14 +62,11 @@ feature 'New Task' do
   end
 
   scenario 'Empty task' do
-    visit '/tasks/new'
     click_button '保存'
     expect(page).to have_text 'エラーが発生しました'
   end
 
   scenario 'invalid due date' do
-    visit '/tasks/new'
-
     fill_in 'task_name', :with => 'My Task'
     fill_in 'task_detail', :with => 'Detail'
     fill_in 'task_due_date', :with => DateTime.now - 1
@@ -81,10 +80,11 @@ end
 feature 'Edit Task' do
   fixtures :tasks
 
-  scenario 'User edits task' do
+  before(:each) do
     visit tasks_show_path(Task.last.id)
-    expect(page).to have_text 'MyString'
+  end
 
+  scenario 'User edits task' do
     click_link '編集'
 
     fill_in 'task_name', :with => 'EditEdit'
@@ -99,9 +99,6 @@ feature 'Edit Task' do
   end
 
   scenario 'empty task' do
-    visit tasks_show_path(Task.last.id)
-    expect(page).to have_text 'MyString'
-
     click_link '編集'
 
     fill_in 'task_name', :with => ''
@@ -116,10 +113,11 @@ end
 feature 'Delete Task' do
   fixtures :tasks
 
-  scenario 'User deletes task' do
+  before(:each) do
     visit tasks_show_path(Task.last.id)
-    expect(page).to have_text 'MyString'
+  end
 
+  scenario 'User deletes task' do
     click_link '削除'
 
     expect(page).to have_text 'タスクを削除しました'
