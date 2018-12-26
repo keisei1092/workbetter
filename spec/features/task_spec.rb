@@ -1,6 +1,18 @@
 require 'rails_helper'
 
-feature 'tasks index Sort' do
+feature 'tasks index' do
+  scenario 'task search by keyword' do
+    # do something
+  end
+
+  scenario 'task search by status' do
+    # do something
+  end
+
+  scenario 'task search by keyword and status' do
+    # do something
+  end
+
   scenario 'tasks sort by create or update desc' do
     visit '/tasks'
 
