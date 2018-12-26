@@ -1,9 +1,7 @@
 class TasksController < ApplicationController
   def index
     # キーワード検索
-    @tasks = params[:q].present?
-      ? Task.find_by(name: params[:q])
-      : Task.all
+    @tasks = params[:q].present? ? Task.where('name ~* ?', params[:q]) : Task.all
     # ステータス
     if params[:status].present?
       @tasks = @tasks.select { |t| t.status == params[:status] }
