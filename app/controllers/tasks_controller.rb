@@ -1,11 +1,18 @@
 class TasksController < ApplicationController
   def index
+    # キーワード検索
+    @tasks = params[:q].present?
+      ? Task.find_by(name: params[:q])
+      : Task.all
+    # ステータス
+    if params[:status].present?
+      @tasks = @tasks.select { |t| t.status == params[:status] }
+    end
+    # ソート
     if params[:sort] == 'due_date'
-      @tasks = Task.all
-        .sort_by { |t| t.due_date }
-        .reverse # due_dateの降順
+      @tasks = @tasks.sort_by { |t| t.due_date }.reverse
     else
-      @tasks = Task.all
+      @tasks = @tasks
         .sort_by { |t| [t.created_at, t.updated_at].max }
         .reverse # updated_atの降順
     end
