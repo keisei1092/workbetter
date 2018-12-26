@@ -36,6 +36,9 @@ en:
   edit: "Edit"
   delete: "Delete"
   back: "Back"
+  search:
+    for: "Search for:"
+    label: "Search"
   errors:
     occur: "Error occurred"
     datetime: "must be a valid datetime"

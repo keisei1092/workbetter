@@ -5,6 +5,9 @@ ja:
   edit: "編集"
   delete: "削除"
   back: "戻る"
+  search:
+    for: "タスクを検索:"
+    label: "検索"
   errors:
     occur: "エラーが発生しました"
     datetime: "正しい日時を入力してください"
