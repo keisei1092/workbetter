@@ -1,12 +1,16 @@
 require 'rails_helper'
 
 feature 'tasks index' do
+  fixtures :tasks
+
   before(:each) do
     visit '/tasks'
   end
 
   scenario 'task search by keyword' do
-    # do something
+    fill_in 'q', with: 'MyString'
+    click_button '検索'
+    expect(page).to have_text 'MyString'
   end
 
   scenario 'task search by status' do
