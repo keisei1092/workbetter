@@ -56,9 +56,9 @@ feature 'New Task' do
   end
 
   scenario 'User create a new task' do
-    fill_in 'task_name', :with => 'My Task'
-    fill_in 'task_detail', :with => 'Detail'
-    fill_in 'task_due_date', :with => ''
+    fill_in 'task_name', with: 'My Task'
+    fill_in 'task_detail', with: 'Detail'
+    fill_in 'task_due_date', with: ''
 
     click_button '保存'
 
@@ -71,9 +71,9 @@ feature 'New Task' do
   end
 
   scenario 'invalid due date' do
-    fill_in 'task_name', :with => 'My Task'
-    fill_in 'task_detail', :with => 'Detail'
-    fill_in 'task_due_date', :with => DateTime.now - 1
+    fill_in 'task_name', with: 'My Task'
+    fill_in 'task_detail', with: 'Detail'
+    fill_in 'task_due_date', with: DateTime.now - 1
 
     click_button '保存'
 
@@ -91,9 +91,9 @@ feature 'Edit Task' do
   scenario 'User edits task' do
     click_link '編集'
 
-    fill_in 'task_name', :with => 'EditEdit'
-    fill_in 'task_detail', :with => 'detaildetaildetail'
-    fill_in 'task_due_date', :with => ''
+    fill_in 'task_name', with: 'EditEdit'
+    fill_in 'task_detail', with: 'detaildetaildetail'
+    fill_in 'task_due_date', with: ''
 
     click_button '保存'
 
@@ -105,8 +105,8 @@ feature 'Edit Task' do
   scenario 'empty task' do
     click_link '編集'
 
-    fill_in 'task_name', :with => ''
-    fill_in 'task_detail', :with => ''
+    fill_in 'task_name', with: ''
+    fill_in 'task_detail', with: ''
 
     click_button '保存'
 
