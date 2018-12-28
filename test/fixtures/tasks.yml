@@ -3,6 +3,7 @@
 one:
   name: MyString
   detail: MyText
+  status: <%= Task.statuses[:todo] %>
   updated_at: <%= Time.now - 3600 %>
   created_at: <%= Time.now - 3600 %>
   due_date: <%= Time.now + 3600 %>
@@ -10,6 +11,7 @@ one:
 two:
   name: TwoTask
   detail: TwoDetail
+  status: <%= Task.statuses[:doing] %>
   updated_at: <%= Time.now - 3600 %>
   created_at: <%= Time.now - 7200 %>
   due_date: <%= Time.now + 7200 %>
@@ -17,6 +19,7 @@ two:
 three:
   name: ThreeTask
   detail: ThreeDetail
+  status: <%= Task.statuses[:done] %>
   updated_at: <%= Time.now - 7200 %>
   created_at: <%= Time.now - 7200 %>
   due_date: <%= Time.now + 10800 %>
@@ -24,6 +27,7 @@ three:
 four:
   name: FourTask
   detail: FourDetail
+  status: <%= Task.statuses[:todo] %>
   updated_at: <%= Time.now %>
   created_at: <%= Time.now %>
   due_date: <%= Time.now + 14400 %>

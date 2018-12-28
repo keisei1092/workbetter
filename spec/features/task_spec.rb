@@ -14,7 +14,9 @@ feature 'tasks index' do
   end
 
   scenario 'task search by status' do
-    # do something
+    find("option[value='done']").select_option
+    click_button '検索'
+    expect(page).to have_text 'ThreeTask'
   end
 
   scenario 'task search by keyword and status' do
