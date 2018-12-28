@@ -54,6 +54,10 @@ group :development do
 
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'awesome_print', require: 'ap'
+
+  gem 'bullet'
 end
 
 group :test do
