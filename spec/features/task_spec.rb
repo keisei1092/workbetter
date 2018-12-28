@@ -20,7 +20,10 @@ feature 'tasks index' do
   end
 
   scenario 'task search by keyword and status' do
-    # do something
+    fill_in 'q', with: 'TwoTask'
+    find("option[value='doing']").select_option
+    click_button '検索'
+    expect(page).to have_text 'TwoTask'
   end
 
   scenario 'tasks sort by create or update desc' do
